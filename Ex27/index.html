@@ -44,12 +44,12 @@
         cursor: pointer;
         border-radius: 8px;
         box-shadow: 2px 2px 8px #000;
-        color: white; 
+        color: black; 
       }
 
       button:hover {
         background-color: #ff3131; 
-        color: black; 
+        color: white; 
       }
 
       main {
@@ -74,6 +74,14 @@
         margin: 10px 0;
       }
 
+      #pokemon-position {
+        font-size: 1.0em;
+        margin-top: 20px;
+        color: cyan; 
+        font-style: normal;
+        text-align: center; 
+      }
+
       footer {
         position: fixed;
         bottom: 10px;
@@ -81,23 +89,22 @@
       }
 
       footer img {
-  width: 120px;
-  animation: bounce 2s infinite;
-}
+        width: 120px;
+        animation: bounce 2s infinite;
+      }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
 
-      
       #pokemon-previous, #pokemon-next {
         background-color: #ffd83e; 
-        color: white;
+        color: black;
         border: none;
         font-size: 1.2em; 
         padding: 8px 12px; 
@@ -108,32 +115,39 @@
 
       #pokemon-previous:hover, #pokemon-next:hover {
         background-color: #ff3131; 
-        color: black; 
+        color: white; 
       }
 
       button:hover {
-  background: linear-gradient(120deg, #ffd83e, #ff3131);
-  background-size: 200% 200%;
-  animation: wave 2s ease-in-out infinite;
-}
+        background: linear-gradient(120deg, #ffd83e, #ff3131);
+        background-size: 200% 200%;
+        animation: wave 2s ease-in-out infinite;
+      }
 
-@keyframes wave {
-  0% {background-position: 0 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0 50%;}
-}
+      @keyframes wave {
+        0% {background-position: 0 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0 50%;}
+      }
 
-button {
-  background: linear-gradient(120deg, #90e73f, #eeff00,#ffd000);
-  background-size: 200% 200%;
-  animation: wave 5s ease-in-out infinite;
-}
-
-@keyframes wave {
-  0% {background-position: 0 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0 50%;}
-}
+      button {
+        background: linear-gradient(120deg,   
+        #3cf9ff, 
+        #00ff73, 
+        #6ff721, 
+        #90e73f, 
+        #baff1a, 
+        #eeff00, 
+        #f3e100,  
+        #f8c300,  
+        #ffbb00, 
+        #ff9f00,  
+        #ff8513,
+        #ff5100
+        );
+        background-size: 200% 200%;
+        animation: wave 5s ease-in-out infinite;
+      }
 
     </style>
   </head>
@@ -162,12 +176,13 @@ button {
         <span id="pokemon-height">HEIGHT</span>
         <ul id="pokemon-types"></ul>
         <ul id="pokemon-abilities"></ul>
+        <span id="pokemon-position"></span>
       </div>
       <button id="pokemon-next" disabled>&gt;&gt;</button>
     </main>
     <footer>
       <img src="./assets/img/evoff.png" alt="Evoff Logo" />
     </footer>
-     <script src="./main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
