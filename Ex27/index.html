@@ -1,188 +1,146 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercice 34</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercice 34</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <style>
       body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-image: url('./assets/img/evo.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
-        position: relative;
-      }
+    cursor: url('./assets/img/SourisV2.png'), auto;
+  }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('./assets/img/evo.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      position: relative;
+    }
 
-      header img {
-        display: block;
-        margin: 0 auto;
-        padding-top: 20px;
-        width: 250px; 
-      }
+    header img {
+      display: block;
+      margin: 0 auto;
+      padding-top: 20px;
+      width: 250px; 
+    }
 
-      #pokemon-search {
-        text-align: center;
-        margin-top: 20px;
-      }
+    #pokemon-search {
+      text-align: center;
+      margin-top: 20px;
+    }
 
-      #search-input {
-        font-size: 1.5em; 
-        padding: 10px;
-        width: 400px;
-      }
+    #search-input {
+      font-size: 1.5em; 
+      padding: 10px;
+      width: 400px;
+    }
 
-      button {
-        font-size: 1.5em;
-        background-color: #ffd83e; 
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 8px;
-        box-shadow: 2px 2px 8px #000;
-        color: black; 
-      }
+    button {
+    font-size: 1.5em;
+    background-color: #ffd83e;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px #000;
+    color: black;
+  }
 
-      button:hover {
-        background-color: #ff3131; 
-        color: white; 
-      }
+  button:hover {
+    background-color: #ff3131;
+    color: white;
+  }
 
-      main {
-        text-align: center;
-        color: white;
-      }
+    main {
+      text-align: center;
+      color: white;
+    }
 
-      #pokemon-display {
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 20px;
-        border-radius: 10px;
-        display: inline-block;
-        margin-top: 20px;
-      }
+    #pokemon-display {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 20px;
+    }
 
-      img#pokemon-picture {
-        width: 400px; 
-      }
+    img#pokemon-picture {
+      width: 400px; 
+    }
 
-      #pokemon-name, #pokemon-weight, #pokemon-height {
-        display: block;
-        margin: 10px 0;
-      }
+    #pokemon-name, #pokemon-weight, #pokemon-height {
+      display: block;
+      margin: 10px 0;
+    }
 
-      #pokemon-position {
-        font-size: 1.0em;
-        margin-top: 20px;
-        color: cyan; 
-        font-style: normal;
-        text-align: center; 
-      }
+    #pokemon-types img {
+      width: 50px;
+      margin: 5px;
+      cursor: pointer;
+    }
 
-      footer {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-      }
-
-      footer img {
-        width: 120px;
-        animation: bounce 2s infinite;
-      }
-
-      @keyframes bounce {
-        0%, 100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      #pokemon-previous, #pokemon-next {
-        background-color: #ffd83e; 
-        color: black;
-        border: none;
-        font-size: 1.2em; 
-        padding: 8px 12px; 
-        cursor: pointer;
-        border-radius: 50%;
-        box-shadow: 2px 2px 10px #000;
-      }
-
-      #pokemon-previous:hover, #pokemon-next:hover {
-        background-color: #ff3131; 
-        color: white; 
-      }
-
-      button:hover {
-        background: linear-gradient(120deg, #ffd83e, #ff3131);
-        background-size: 200% 200%;
-        animation: wave 2s ease-in-out infinite;
-      }
-
-      @keyframes wave {
+    @keyframes wave {
         0% {background-position: 0 50%;}
         50% {background-position: 100% 50%;}
         100% {background-position: 0 50%;}
       }
-
+    
       button {
-        background: linear-gradient(120deg,   
-        #3cf9ff, 
+        background: linear-gradient(120deg,  
+        #3cfff5,
+        #00ffea,  
         #00ff73, 
         #6ff721, 
         #90e73f, 
         #baff1a, 
         #eeff00, 
         #f3e100,  
-        #f8c300,  
-        #ffbb00, 
+        #f8c300,   
         #ff9f00,  
-        #ff8513,
-        #ff5100
+        #fd6721,
+        #f84214
         );
         background-size: 200% 200%;
         animation: wave 5s ease-in-out infinite;
       }
 
-    </style>
-  </head>
-  <body>
-    <header>
-      <img src="./assets/img/logo.png" alt="Pokedex Logo" />
-      <form action="#" id="pokemon-search">
-        <input
-          type="text"
-          placeholder="Nom ou Numéro de Pokédex national"
-          id="search-input"
-        />
-        <button>Search</button>
-      </form>
-    </header>
-    <main>
-      <button id="pokemon-previous" disabled>&lt;&lt;</button>
-      <div id="pokemon-display">
-        <img
-          id="pokemon-picture"
-          src="./assets/img/pokeball.png"
-          alt="Pokemon Sprite"
-        />
-        <span id="pokemon-name">NAME</span>
-        <span id="pokemon-weight">WEIGHT</span>
-        <span id="pokemon-height">HEIGHT</span>
-        <ul id="pokemon-types"></ul>
-        <ul id="pokemon-abilities"></ul>
-        <span id="pokemon-position"></span>
-      </div>
-      <button id="pokemon-next" disabled>&gt;&gt;</button>
-    </main>
-    <footer>
-      <img src="./assets/img/evoff.png" alt="Evoff Logo" />
-    </footer>
-    <script src="./main.js"></script>
-  </body>
+      #pokemon-position {
+    font-size: 1.0em;
+    margin-top: 20px;
+    color: cyan;
+    font-style: normal;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="./assets/img/logo.png" alt="Pokedex Logo" />
+    <form action="#" id="pokemon-search">
+      <input type="text" placeholder="Nom ou Numéro de Pokédex national" id="search-input" />
+      <button>Search</button>
+    </form>
+  </header>
+  <main>
+    <button id="pokemon-previous" disabled>&lt;&lt;</button>
+    <div id="pokemon-display">
+      <img id="pokemon-picture" src="./assets/img/pokeball.png" alt="Pokemon Sprite" />
+      <span id="pokemon-name">NAME</span>
+      <span id="pokemon-weight">WEIGHT</span>
+      <span id="pokemon-height">HEIGHT</span>
+      <ul id="pokemon-types"></ul>
+      <ul id="pokemon-abilities"></ul>
+      <span id="pokemon-position"></span>
+    </div>
+    <button id="pokemon-next" disabled>&gt;&gt;</button>
+  </main>
+  <footer>
+    <img src="./assets/img/evoli.png" alt="Evoff Logo" />
+  </footer>
+  <script src="main.js"></script>
+</body>
 </html>
